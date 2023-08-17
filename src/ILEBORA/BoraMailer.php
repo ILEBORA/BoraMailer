@@ -43,6 +43,8 @@ class BoraMailer{
     private $body;
     private $attachments = [];
     private $BOUNDARY = "anystring";
+
+    private $title;
     
     public $error;
     
@@ -68,6 +70,11 @@ class BoraMailer{
 
     public function body($body){
         $this->body = $body;    
+        return $this;
+    }
+
+    public function title($title){
+        $this->title = $title;    
         return $this;
     }
 
@@ -119,7 +126,7 @@ class BoraMailer{
             'subject' => $this->subject,
             'body' => $this->body,
             'attachments' => $this->attachments,
-    
+            'title' => $this->title,
         );
 
         try{
