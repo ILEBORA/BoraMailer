@@ -14,7 +14,8 @@ $mail = (new BoraMailer())
           ->to($to)
           ->from(BoraConstants::senderEmail) //Get default sender email
           ->subject($subject)
-          ->body($body);
+          ->body($body)
+          ->title(BoraConstants::userName);
 
 //Send email request to BORA API
 $emailResp = $mail->sendRemote();
